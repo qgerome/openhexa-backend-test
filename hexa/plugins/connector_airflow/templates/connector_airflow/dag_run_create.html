@@ -4,25 +4,110 @@
 {% block page_title %}{{ dag.dag_id }}{% endblock %}
 
 {% block page_content %}
-    {% blocktranslate asvar title with dag_id=dag.dag_id %}Specify configuration for DAG {{ dag_id }}{% endblocktranslate %}
+    {% blocktranslate asvar title with dag_id=dag.dag_id %}Specify configuration for DAG
+        {{ dag_id }}{% endblocktranslate %}
     {% embed "ui/section/section.html" with title=title %}
         {% slot content %}
             <!-- TEST-KEY: SET_DAG_CONFIG -->
-            <form method="post" action="{% url "connector_airflow:dag_run_create" cluster_id=dag.cluster_id dag_id=dag.id %}">
+            <form method="post"
+                  action="{% url "connector_airflow:dag_run_create" cluster_id=dag.cluster_id dag_id=dag.id %}">
                 {% csrf_token %}
                 {% if error %}
                     <p class="mt-4 mb-2 text-sm text-red-600">{{ error }}</p>
-                    <textarea name="dag_config" rows="10" class="w-full form-textarea resize-none shadow-sm block w-full focus:ring-red-500 focus:border-red-500 sm:text-sm border-red-300 rounded-md">{{ run_config }}</textarea>
-                {% else %}
-                    <textarea name="dag_config" rows="10" class="w-full form-textarea resize-none shadow-sm block w-full focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md">{{ run_config }}</textarea>
                 {% endif %}
-                <input  type="submit" value="Run with configuration" class="group relative my-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"/>
+                <div
+                        x-data="ConfigurationEditor()"
+                        x-init="init($el)"
+                >
+                    <label class="sr-only" for="dag_config"></label>
+                    <textarea
+                            id="dag_config"
+                            name="dag_config"
+                            rows="10"
+                            class="hidden"
+                            x-ref="input"
+                    >
+                        {{ run_config }}
+                    </textarea>
+                    <div x-ref="editor"></div>
+                </div>
+                <input type="submit" value="Run with configuration"
+                       class="group relative my-4 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer"/>
             </form>
 
             {% if run_config != sample_config %}
                 <p class="my-4 text-sm text-gray-900">Pipeline sample configuration:</p>
                 <pre class="text-sm text-gray-900">{{ sample_config }}</pre>
             {% endif %}
+
+            <script type="text/javascript">
+                function ConfigurationEditor() {
+                    return {
+                        init($el) {
+                            const editor = new JSONEditor(this.$refs.editor, {
+                                theme: "barebones",
+                                disable_array_reorder: true,
+                                disable_properties: true,
+                                disable_collapse: true,
+                                prompt_before_delete: false,
+                                schema: {
+                                    "title": "Config",
+                                    "type": "object",
+                                    "required": [
+                                        "start",
+                                        "end",
+                                        "data_elements",
+                                        "organisation_units",
+                                    ],
+                                    "properties": {
+                                        "start": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "options": {
+                                                "flatpickr": {}
+                                            },
+                                            "default": "2021-01-01"
+                                        },
+                                        "end": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "options": {
+                                                "flatpickr": {}
+                                            },
+                                            "default": "2021-12-31"
+                                        },
+                                        "data_elements": {
+                                            "type": "array",
+                                            "format": "table",
+                                            "title": "Data Elements",
+                                            "uniqueItems": true,
+                                            "items": {
+                                                "type": "string",
+                                            },
+                                            "minItems": 1,
+                                            "default": ["fClA2Erf6IO", "vI2csg55S9C"],
+                                        },
+                                        "organisation_units": {
+                                            "type": "array",
+                                            "format": "table",
+                                            "title": "Organisation units",
+                                            "uniqueItems": true,
+                                            "items": {
+                                                "type": "string",
+                                            },
+                                            "minItems": 1,
+                                            "default": ["ZpE2POxvl9P", "LFpl1falVZi"]
+                                        },
+                                    }
+                                }
+                            });
+                            editor.on('change', () => {
+                                this.$refs.input.innerHTML = JSON.stringify(editor.getValue());
+                            });
+                        },
+                    }
+                }
+            </script>
         {% endslot %}
     {% endembed %}
 {% endblock %}
