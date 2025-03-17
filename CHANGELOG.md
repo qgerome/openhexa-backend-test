@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.84.0](https://github.com/qgerome/openhexa-backend-test/compare/0.83.1...0.84.0) (2025-03-17)
+
+
+### Features
+
+* Test release ([cf82fdc](https://github.com/qgerome/openhexa-backend-test/commit/cf82fdc729e4b7dbaa2a1cc1029305aa0338b6e1))
+
 ## [0.83.1](https://github.com/BLSQ/openhexa-app/compare/0.83.0...0.83.1) (2025-03-17)
 
 
