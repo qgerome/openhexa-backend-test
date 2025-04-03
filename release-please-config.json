@@ -6,6 +6,8 @@
   "include-component-in-tag": false,
   "group-pull-request-title-pattern": "chore: release ${version}",
   "packages": {
+    ".": {
+    },
     "backend": {
       "release-type": "python"
     },
