@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.0.0 (2025-04-03)
+
+
+### Features
+
+* allow searching for favorites webapps (PATHWAYS-414) ([#959](https://github.com/qgerome/openhexa-backend-test/issues/959)) ([0cac36c](https://github.com/qgerome/openhexa-backend-test/commit/0cac36c280ba36d2d0144900104cbd9704cd38ff))
+
+
+### Bug Fixes
+
+* add missing .env.dist ([e5fedf4](https://github.com/qgerome/openhexa-backend-test/commit/e5fedf40927389f1c54ddc82c61e11af5031f6c4))
+* express upgrade ([ebf529f](https://github.com/qgerome/openhexa-backend-test/commit/ebf529fba26ecd945d676ed8a2a76bd2b90120af))
+* Release 1.0.0 ([b72b59f](https://github.com/qgerome/openhexa-backend-test/commit/b72b59f3014bcfc53bc3e1c4086e0414f4d1665e))
+
+
+### Miscellaneous Chores
+
+* Release 0.75.2 ([81f1d84](https://github.com/qgerome/openhexa-backend-test/commit/81f1d8428fd090311fd67e7d06ae53a3d90bded3))
+
 ## [1.0.0](https://github.com/BLSQ/openhexa-app/compare/0.84.3...1.0.0) (2025-04-02)
 
 
