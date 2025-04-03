@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/qgerome/openhexa-backend-test/compare/1.1.0...1.1.1) (2025-04-03)
+
+
+### Bug Fixes
+
+* wip bnackend ([7af181f](https://github.com/qgerome/openhexa-backend-test/commit/7af181ff1707f65e3c964767109de257094278e8))
+
 ## 1.0.0 (2025-04-03)
 
 
