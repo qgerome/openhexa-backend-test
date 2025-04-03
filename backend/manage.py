@@ -4,6 +4,8 @@
 import os
 import sys
 
+print("coucou")
+
 
 def main():
     """Run administrative tasks."""
