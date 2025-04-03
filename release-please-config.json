@@ -12,5 +12,14 @@
     "frontend": {
       "release-type": "node"
     }
-  }
+  },
+  "plugins": [
+    {
+      "type": "linked-versions",
+      "groupName": "OpenHEXA",
+      "components": [
+        "backend", "frontend"
+      ]
+    }
+  ]
 }
