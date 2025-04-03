@@ -6,6 +6,7 @@ const dev = process.env.NODE_ENV !== "production";
 const api_url = process.env.OPENHEXA_BACKEND_URL ?? "localhost:8000";
 const max_request_body_size = process.env.MAX_REQUEST_BODY_SIZE;
 
+console.log("coucou");
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
