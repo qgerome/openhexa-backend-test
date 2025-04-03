@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/qgerome/openhexa-backend-test/compare/1.0.0...1.1.0) (2025-04-03)
+
+
+### Features
+
+* Add an important console.log ([6359f78](https://github.com/qgerome/openhexa-backend-test/commit/6359f7848aa6b72264fd8d36539c191940d27fe2))
+
 ## 1.0.0 (2025-04-03)
 
 
