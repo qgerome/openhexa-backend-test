@@ -6,12 +6,12 @@
   "include-component-in-tag": false,
   "group-pull-request-title-pattern": "chore: release ${version}",
   "packages": {
-    ".": {
-    },
     "backend": {
+      "component": "backend",
       "release-type": "python"
     },
     "frontend": {
+      "component": "frontend",
       "release-type": "node"
     }
   },
