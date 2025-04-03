@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.0.0 (2025-04-03)
+
+
+### Features
+
+* allow searching for favorites webapps (PATHWAYS-414) ([#959](https://github.com/qgerome/openhexa-backend-test/issues/959)) ([0cac36c](https://github.com/qgerome/openhexa-backend-test/commit/0cac36c280ba36d2d0144900104cbd9704cd38ff))
+
+
+### Bug Fixes
+
+* add authors section to pyproject.toml ([f9ee2f8](https://github.com/qgerome/openhexa-backend-test/commit/f9ee2f85eeedda25a3b21e30756060ae747dac8e))
+* add missing .env.dist ([e5fedf4](https://github.com/qgerome/openhexa-backend-test/commit/e5fedf40927389f1c54ddc82c61e11af5031f6c4))
+* add missing .env.dist ([8be32bc](https://github.com/qgerome/openhexa-backend-test/commit/8be32bc54c1a7825081d7e4c3b5b70201923e10e))
+* do not include component in tag; add name in pyproject ([8df07cb](https://github.com/qgerome/openhexa-backend-test/commit/8df07cbe382df94b7a1eef7710c7cd7f63092d85))
+* image names ([5ecd2fb](https://github.com/qgerome/openhexa-backend-test/commit/5ecd2fb2865de21405f5fa4938e96e01753eddd9))
+* Release 1.0.0 ([b72b59f](https://github.com/qgerome/openhexa-backend-test/commit/b72b59f3014bcfc53bc3e1c4086e0414f4d1665e))
+
+
+### Miscellaneous Chores
+
+* Release 0.75.2 ([81f1d84](https://github.com/qgerome/openhexa-backend-test/commit/81f1d8428fd090311fd67e7d06ae53a3d90bded3))
+
 ## [1.0.1](https://github.com/BLSQ/openhexa-app/compare/1.0.0...1.0.1) (2025-04-02)
 
 
